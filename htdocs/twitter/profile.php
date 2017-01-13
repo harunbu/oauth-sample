@@ -1,7 +1,7 @@
 <?php
+session_start();
 require "../../vendor/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
-session_start();
 
 define('CONSUMER_KEY', getenv('TWITTER_CONSUMER_KEY'));
 define('CONSUMER_SECRET', getenv('TWITTER_CONSUMER_SECRET'));

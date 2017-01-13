@@ -1,16 +1,15 @@
 <?php
-require "../../vendor/autoload.php";
-use Abraham\TwitterOAuth\TwitterOAuth;;
 session_start();
+require "../../vendor/autoload.php";
+use Abraham\TwitterOAuth\TwitterOAuth;
 
 define('CONSUMER_KEY', getenv('TWITTER_CONSUMER_KEY'));
 define('CONSUMER_SECRET', getenv('TWITTER_CONSUMER_SECRET'));
 define('OAUTH_CALLBACK', getenv('TWITTER_OAUTH_CALLBACK'));
 
 $request_token = [];
-$request_token['oauth_token'] = $_SESSION['oauth_token'];
-$request_token['oauth_token_secret'] = $_SESSION['oauth_token_secret'];
-
+$request_token['oauth_token'] = $_SESSION['twitter_oauth_token'];
+$request_token['oauth_token_secret'] = $_SESSION['twitter_oauth_token_secret'];
 if (isset($_REQUEST['oauth_token']) && $request_token['oauth_token'] !== $_REQUEST['oauth_token']) {
     // Abort! Something is wrong.
     echo 'Abort! Something is wrong.';
