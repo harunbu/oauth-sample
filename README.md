@@ -1,2 +1,2 @@
-# opauth-sample
-opauth sample
+# oauth-sample
+oauth sample
