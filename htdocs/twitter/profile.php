@@ -43,7 +43,7 @@ $user = $connection->get("account/verify_credentials", ['include_email' => 'true
         <p>
             セッションに保存されたアクセストークンから、twitterの情報を取得しています。
         </p>
-        <?php if (property_exists('errors', $user)) : ?>
+        <?php if (property_exists($user, 'errors')) : ?>
             <?php foreach ($user->errors as $error) : ?>
                 <div class="alert alert-danger" role="alert"><?=$error->code?> : <?=$error->message?></div>
             <?php endforeach ?>
