@@ -5,6 +5,9 @@ require "../../vendor/autoload.php";
 //偽造対策のトークンを確認
 if ($_SESSION['google_oauth_state'] != $_GET['state']) {
     echo 'エラーです。stateが一致しません。';
+    var_dump($_SESSION['google_oauth_state']);
+    echo '<hr>';
+    var_dump($_GET['state']);
     exit;
 }
 
